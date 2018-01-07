@@ -1,0 +1,63 @@
+{
+  "name": "@quipt/api",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "main": "none",
+  "scripts": {
+    "pretest": "babel-node test/_setCredentials.js",
+    "test": "ava -v"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@evented/aws-api-gateway-framework": "Evented/aws-api-gateway-framework",
+    "ava": "^0.24.0",
+    "aws-sdk-on-lambda": "binoculars/aws-sdk-js-on-lambda",
+    "aws-sigv4": "^2.1.1",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-plugin-dynamic-import-node": "^1.0.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-chmod": "^2.0.0",
+    "gulp-install": "^0.6.0",
+    "gulp-json-editor": "^2.2.1",
+    "gulp-zip": "^3.2.0",
+    "run-sequence": "^1.2.2",
+    "through2": "^2.0.1",
+    "uuid": "^3.0.1",
+    "uuid-parse": "^1.0.0"
+  },
+  "dependencies": {},
+  "babel": {
+    "plugins": [
+      "dynamic-import-node"
+    ],
+    "presets": [
+      "stage-2",
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js",
+      "!test/fixtures/*"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "failWithoutAssertions": false,
+    "babel": "inherit"
+  }
+}

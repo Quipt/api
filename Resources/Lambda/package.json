@@ -1,0 +1,47 @@
+{
+  "name": "@quipt/api-lambda",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "aws-sdk-on-lambda": "binoculars/aws-sdk-js-on-lambda",
+    "babel-core": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-stage-2": "^6.24.1"
+  },
+  "dependencies": {
+    "aws-sigv4": "2.1.1",
+    "node-uuid": "^1.4.7"
+  },
+  "babel": {
+    "presets": [
+      "stage-2",
+      [
+        "env",
+        {
+          "targets": {
+            "node": "6.10"
+          }
+        }
+      ]
+    ]
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "failWithoutAssertions": false,
+    "babel": "inherit"
+  }
+}

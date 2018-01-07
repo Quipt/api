@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"name": {
+				"type": "string",
+				"minLength": 1,
+				"maxLength": 120
+			},
+			"size": {
+				"type": "integer",
+				"minimum": 5120,
+				"maximum": 26214400
+			},
+			"type": {
+				"type": "string",
+				"pattern": "^video/(avi|mp(eg|4)|ogg|quicktime|webm|x-(matroska|ms-wmv|flv))$"
+			},
+			"hash": {
+				"type": "string",
+				"pattern": "^[0-9a-f]{64}$"
+			},
+			"index": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 99
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"name",
+			"size",
+			"type",
+			"hash"
+		]
+	},
+	"minItems": 1,
+	"maxItems": 100,
+	"uniqueItems": true
+}

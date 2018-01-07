@@ -1,0 +1,33 @@
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Description": "The REST API",
+	"Parameters": {
+		"DatabaseVersion": {
+			"Type": "String",
+			"Default": "dev"
+		},
+		"StageName": {
+			"Type": "String",
+			"Description": "The stage name"
+		},
+		"UploadBucket": {
+			"Type": "String",
+			"Description": "The bucket to upload videos to"
+		},
+		"LambdaS3Bucket": {
+			"Type": "String"
+		},
+		"LambdaS3Key": {
+			"Type": "String"
+		}
+	},
+	"Resources": {},
+	"Outputs": {
+		"RestApi": {
+			"Description": "The REST API ID",
+			"Value": {
+				"Ref": "RestApi"
+			}
+		}
+	}
+}
